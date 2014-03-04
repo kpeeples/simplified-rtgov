@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.1.2.3 (Linux)">
+	<META NAME="CREATED" CONTENT="20140219;1727020994">
+	<META NAME="CHANGED" CONTENT="20140304;163734951239424">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 0.79in }
+		P { margin-bottom: 0.08in }
+		A:link { so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Simplified
+Workshop Series </B></FONT></FONT>
+</P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>Run
+Time Governance</B></FONT></FONT></P>
+<P ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B>in
+Fuse Service Works</B></FONT></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif">Welcome
+to the Simplified demo series. I refer to this as a workshop in a
+box, meaning everything is included to get you started such as the
+source, instructions, videos, presentations, etc. This demo will walk
+you through a quick demo of Run Time Governance in Fuse Service
+Works. It is split into 3 main sections. First is the quick demo
+which walks you through the quick steps to run a quick, easy demo
+(The What). The second section gives an overview of the technology
+and how the demo was created (The Why and How). The third section
+gives you additional collateral. So let’s get started and as they
+say so easy a non techie can do it...</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif"><B>Section
+1 : Run a quick demo</B></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: normal"><FONT FACE="Arial, sans-serif">NOTE:
+Screen shots and more step by step for creating/running the demo from
+scratch are in section 2.</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif"><SPAN STYLE="font-weight: normal">Step
+1: Clone the repository from
+<A HREF="https://github.com/kpeeples/simplified-rtgov">https://github.com/kpeeples/simplified-rtgov</A></SPAN></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif">Step 2:
+Download Fuse Service Works from
+<A HREF="http://www.jboss.org/products/fsw.html">http://www.jboss.org/products/fsw.html</A></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif">Step 3:
+Place the software in the distros folder</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif">Step 4:
+Modify the support/InstallationScript.xml file to contain the full
+path to the installed/fsw directory. Make sure to leave the
+installed/fsw directory. The script performs the automated install of
+Fuse Service Works. NOTE: This is installing the Switchyard, DTGov,
+S-RAMP and RTGov components which wouldn’t be the recommended setup
+as Design Time would be a separate server from the Switchyard/Run
+Time Server. </FONT>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; background: #dddddd"><FONT FACE="Arial, sans-serif">&lt;installpath&gt;/home/kpeeples/demos/fsw-simple-demo/installed/fsw&lt;/installpath&gt;</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif">Step 5:
+Modify the post-run.sh file to have the appropriate directory for the
+quickstarts.</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif">Step 6:
+Run the install-run.sh script to install FSW and start the server</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif">Step 7:
+Open another terminal and run the post-run.sh script. This will kick
+off the individual examples.</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif">A. First
+we deploy the application and information processor. The accepted
+status from the response should be true.</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif">B. Next
+we will show the Synchronous Policy Enforcement to see that requests
+from Fred cannot be performed more the 1 request every 2 seconds.</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><SPAN STYLE="font-variant: normal"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Arial, Tahoma, Helvetica, FreeSans, sans-serif"><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">C.
+Next we will show the Asynchronous Policy Enforcement to see that a
+customer will be suspended after 3 attempts that goes over a
+threshold. A make payment is done in order to continue orders.</SPAN></SPAN></FONT></FONT></SPAN></FONT></SPAN></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><SPAN STYLE="font-variant: normal"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Arial, Tahoma, Helvetica, FreeSans, sans-serif"><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">D.
+Next we will show SLA Monitoring. The “Situations” active
+collection will report SLA violations to the end user through REST or
+JMX. We will use REST.</SPAN></SPAN></FONT></FONT></SPAN></FONT></SPAN></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><SPAN STYLE="font-variant: normal"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Arial, Tahoma, Helvetica, FreeSans, sans-serif"><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">E.
+Next we will show SLA Reporting. We will generate a report which will
+return the violations that occured in year 2014.</SPAN></SPAN></FONT></FONT></SPAN></FONT></SPAN></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><SPAN STYLE="font-variant: normal"><FONT COLOR="#000000"><SPAN STYLE="text-decoration: none"><FONT FACE="Arial, Tahoma, Helvetica, FreeSans, sans-serif"><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">This
+is a quick demo of Run Time Governance. More detail of configuration
+and step by step are below.</SPAN></SPAN></FONT></FONT></SPAN></FONT></SPAN></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif"><B>Section
+2 : Technology Overview and creating the demo step by step</B></FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif">Technology
+Overview</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif">Step by
+Step</FONT></P>
+<P STYLE="margin-bottom: 0in"><BR>
+</P>
+<P STYLE="margin-bottom: 0in"><FONT FACE="Arial, sans-serif"><B>Section
+3 : Additional Collateral and demo structure</B></FONT></P>
+<P STYLE="margin-bottom: 0in"><SPAN STYLE="font-variant: normal"><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=4><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal"><BR></SPAN></SPAN></FONT></FONT></FONT></SPAN><SPAN STYLE="font-variant: normal"><FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3><SPAN STYLE="font-style: normal"><SPAN STYLE="font-weight: normal">The
+root folder of the demo contains:</SPAN></SPAN></FONT></FONT></FONT></SPAN></P>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0in; font-variant: normal; font-style: normal; font-weight: normal">
+	<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>install-run.sh
+	to install and run FSW</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0in; font-variant: normal; font-style: normal; font-weight: normal">
+	<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>pre-run.sh
+	to do any pre-installation setup or compiling</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0in; font-variant: normal; font-style: normal; font-weight: normal">
+	<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>post-run.sh
+	to do any post-install setup or compiling</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0in; font-variant: normal; font-style: normal; font-weight: normal">
+	<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>README.MD
+	to briefly descibe the demo</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0in; font-variant: normal; font-style: normal; font-weight: normal">
+	<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>readme.html
+	to meet the objectives 1) quick and easy demo 2) step by step
+	instructions with collateral</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0in; font-variant: normal; font-style: normal; font-weight: normal">
+	<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>reset.sh
+	to reset the demo</FONT></FONT></FONT></P>
+</UL>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in; font-variant: normal; font-style: normal; font-weight: normal">
+<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>The
+collateral folder contains:</FONT></FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0in; font-variant: normal; font-style: normal; font-weight: normal">
+	<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Video
+	for videos or link to video</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0in; font-variant: normal; font-style: normal; font-weight: normal">
+	<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Presentation
+	for presentations or link to presentation</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0in; font-variant: normal; font-style: normal; font-weight: normal">
+	<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Blog
+	for a blog document or link to blog</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0in; font-variant: normal; font-style: normal; font-weight: normal">
+	<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Simulation
+	for a simulation of the demo or link to simulation</FONT></FONT></FONT></P>
+</UL>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in; font-variant: normal; font-style: normal; font-weight: normal">
+<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>The
+distros folder contain the downloads for the demo</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in; font-variant: normal; font-style: normal; font-weight: normal">
+<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>The
+installed folder contains subfolders for the software to be installed
+when the script is run</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in; font-variant: normal; font-style: normal; font-weight: normal">
+<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>The
+source folder contains any source projects to be compiled and
+deployed</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in; font-variant: normal; font-style: normal; font-weight: normal">
+<FONT COLOR="#000000"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>The
+support folder contains any supporting files/directories</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0in; font-weight: normal"><BR>
+</P>
+<P STYLE="margin-bottom: 0in; font-weight: normal"><FONT FACE="Arial, sans-serif"><FONT SIZE=3>Closing</FONT></FONT></P>
+</BODY>
+</HTML>
